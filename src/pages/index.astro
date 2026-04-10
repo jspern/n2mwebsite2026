@@ -1,0 +1,40 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/home/Hero.astro';
+import ServicesGrid from '../components/home/ServicesGrid.astro';
+import StatsBar from '../components/home/StatsBar.astro';
+import TestimonialsPreview from '../components/home/TestimonialsPreview.astro';
+import HomeCTA from '../components/home/HomeCTA.astro';
+
+export const prerender = true;
+---
+
+<PageLayout
+  title="N2M Technology"
+  description="N2M Technology — Metro Detroit's trusted managed IT services provider. Complete IT environment ownership: managed IT, cybersecurity, cloud, infrastructure, and more. One partner. One standard. One call."
+>
+  <Hero />
+  <ServicesGrid />
+  <StatsBar />
+  <TestimonialsPreview />
+  <HomeCTA />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "N2M Technology",
+    "description": "Managed IT Services Provider serving Metro Detroit businesses.",
+    "url": "https://n2mtech.com",
+    "telephone": "+1-248-247-2626",
+    "email": "sales@n2mtech.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "7400 Triangle Dr., Suite B",
+      "addressLocality": "Sterling Heights",
+      "addressRegion": "MI",
+      "addressCountry": "US"
+    },
+    "areaServed": "Metro Detroit, MI",
+    "knowsAbout": ["Managed IT Services","Cybersecurity","Cloud Solutions","Network Infrastructure","Building Security","VoIP Phone Services"]
+  })} />
+</PageLayout>

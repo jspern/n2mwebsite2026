@@ -3,14 +3,13 @@ const currentPath = Astro.url.pathname;
 
 const services = [
   { label: 'Managed IT Services', href: '/services/managed-it' },
-  { label: 'Cybersecurity', href: '/services/cybersecurity' },
-  { label: 'Cloud Solutions', href: '/services/cloud-solutions' },
-  { label: 'Infrastructure Design', href: '/services/infrastructure-design' },
-  { label: 'Building Security', href: '/services/building-security' },
-  { label: 'VoIP Phone Services', href: '/services/voip-phone-services' },
+  { label: 'Structured Cabling', href: '/services/cabling' },
+  { label: 'Physical Security', href: '/services/physical-security' },
+  { label: 'AI Services', href: '/services/ai-services' },
 ];
 
 const navLinks = [
+  { label: 'How It Works', href: '/how-it-works' },
   { label: 'About', href: '/about' },
   { label: 'Our Work', href: '/work' },
   { label: 'Contact', href: '/contact' },
@@ -26,8 +25,7 @@ function isActive(href: string) {
   <nav class="nav-inner" aria-label="Main navigation">
     <!-- Logo -->
     <a href="/" class="nav-logo" aria-label="N2M Technology home">
-      <span class="nav-logo-text">n2m</span>
-      <span class="nav-logo-word">technology</span>
+      <img src="/images/N2M_blue_logo_short.png" alt="n2m" class="nav-logo-img" width="72" height="32" />
     </a>
 
     <!-- Desktop nav -->
@@ -86,7 +84,7 @@ function isActive(href: string) {
   <div class="mobile-menu-panel">
     <div class="mobile-menu-header">
       <a href="/" class="nav-logo" onclick="closeMobileMenu()">
-        <span class="nav-logo-text">n2m</span>
+        <img src="/images/N2M_blue_logo_short.png" alt="n2m" class="nav-logo-img" width="72" height="32" />
         <span class="nav-logo-word">technology</span>
       </a>
       <button class="mobile-menu-close" id="mobile-close" aria-label="Close menu">
@@ -156,13 +154,10 @@ function isActive(href: string) {
     text-decoration: none;
   }
 
-  .nav-logo-text {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--color-accent);
-    letter-spacing: -0.02em;
-    line-height: 1;
+  .nav-logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
   }
 
   .nav-logo-word {

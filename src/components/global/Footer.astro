@@ -1,14 +1,13 @@
 ---
 const services = [
   { label: 'Managed IT Services', href: '/services/managed-it' },
-  { label: 'Cybersecurity', href: '/services/cybersecurity' },
-  { label: 'Cloud Solutions', href: '/services/cloud-solutions' },
-  { label: 'Infrastructure Design', href: '/services/infrastructure-design' },
-  { label: 'Building Security', href: '/services/building-security' },
-  { label: 'VoIP Phone Services', href: '/services/voip-phone-services' },
+  { label: 'Structured Cabling', href: '/services/cabling' },
+  { label: 'Physical Security', href: '/services/physical-security' },
+  { label: 'AI Services', href: '/services/ai-services' },
 ];
 
 const company = [
+  { label: 'How It Works', href: '/how-it-works' },
   { label: 'About', href: '/about' },
   { label: 'Our Work', href: '/work' },
   { label: 'Contact', href: '/contact' },
@@ -22,8 +21,7 @@ const company = [
       <!-- Brand -->
       <div class="footer-brand">
         <a href="/" class="footer-logo" aria-label="N2M Technology home">
-          <span class="footer-logo-text">n2m</span>
-          <span class="footer-logo-word">technology</span>
+          <img src="/images/N2M_white_logo_short.png" alt="n2m" class="footer-logo-img" width="80" height="36" />
         </a>
         <p class="footer-tagline">Clearly Designed and Delivered</p>
         <p class="footer-mission">One IT partner. One standard. One call.</p>
@@ -126,13 +124,10 @@ const company = [
     margin-bottom: 0.75rem;
   }
 
-  .footer-logo-text {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--color-accent);
-    letter-spacing: -0.02em;
-    line-height: 1;
+  .footer-logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
   }
 
   .footer-logo-word {

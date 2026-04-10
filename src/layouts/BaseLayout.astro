@@ -64,21 +64,31 @@ const fullTitle = title === 'N2M Technology' ? title : `${title} | N2M Technolog
     <slot />
     <Analytics />
 
-    <!-- Scroll reveal -->
+    <!-- Scroll reveal — JS adds reveal-ready before observing, so content is visible without JS -->
     <script>
+      let revealObserver: IntersectionObserver | null = null;
+
       function initReveal() {
-        const observer = new IntersectionObserver(
+        if (revealObserver) revealObserver.disconnect();
+
+        revealObserver = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
                 entry.target.classList.add('revealed');
-                observer.unobserve(entry.target);
+                revealObserver?.unobserve(entry.target);
               }
             });
           },
-          { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+          { threshold: 0.08, rootMargin: '0px 0px -20px 0px' }
         );
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+          if (!el.classList.contains('revealed')) {
+            el.classList.add('reveal-ready');
+            revealObserver?.observe(el);
+          }
+        });
       }
 
       initReveal();
